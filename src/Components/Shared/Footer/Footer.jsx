@@ -1,4 +1,4 @@
-
+import footerlogo from "../../../assets/logo/footerlogo.svg"
 
 const Footer = () => {
     return (
@@ -28,6 +28,11 @@ const Footer = () => {
                         <button className="btn ml-6 rounded-sm btn-outline border-2 border-[#1C3988] text-[#1C3988] font-bold mt-4">Subscribe</button>
                     </div>
                 </div>
+            </div>
+
+            <div className="h-[10rem] w-full bg-[#1C3988] flex justify-center items-center">
+                <img src={footerlogo} alt="" />
+
             </div>
 
         </div>
