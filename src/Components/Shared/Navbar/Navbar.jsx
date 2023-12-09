@@ -1,26 +1,28 @@
 import { NavLink } from "react-router-dom";
 import logo from "../../../assets/logo/logo.svg"
+import { useState } from "react";
 
 const Navbar = () => {
+    const [open, setOpen] = useState(false)
     return (
-        <div className="mx-[10%] mt-3">
+        <div className="lg:mx-[10%] mt-3">
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                        <div onClick={()=>setOpen(!open)} tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><NavLink className={({ isActive }) => isActive ? 'btn btn-neutral text-base border-none bg-[#1C3988] text-white' : 'text-lg font-medium btn bg-white border-none shadow-none'} to='/'>Home</NavLink></li>
+                        <ul tabIndex={0} className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 ${open?'':'hidden'}`}>
+                            <li><NavLink className={({ isActive }) => isActive ? 'text-base border-none bg-[#1C3988] text-white' : 'text-base border-none text-black'} to='/'>Home</NavLink></li>
 
-                            <li><NavLink className={({ isActive }) => isActive ? 'text-base border-none bg-[#1C3988] text-white' : 'text-lg font-medium btn bg-white border-none shadow-none'} to='/about'>About Us</NavLink></li>
+                            <li><NavLink className={({ isActive }) => isActive ? 'text-base border-none bg-[#1C3988] text-white' : 'text-base border-none text-black'} to='/about'>About Us</NavLink></li>
                         </ul>
                     </div>
                     {/* logo and name of the website  */}
                     <div className="flex items-center gap-2">
                         <img src={logo} alt="logo" />
 
-                        <h1 className="text-2xl font-bold">Rent<span className="text-[#1C3988]">Swiftly</span></h1>
+                        <h1 className="text-2xl hidden lg:block font-bold">Rent<span className="text-[#1C3988]">Swiftly</span></h1>
 
                     </div>
                 </div>
