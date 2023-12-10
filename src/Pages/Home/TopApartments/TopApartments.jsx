@@ -8,18 +8,18 @@ import TopApartmentSwipperCard from './TopApartmentSwipperCard';
 
 const TopApartments = () => {
     return (
-        <div className="h-[57rem] bg-[#F3F3FA] pt-[7.5rem]">
-            <div className='pl-[10%]'>
-            <h1 className="text-[#091638] merrin text-[3.2rem] font-semibold">Top Apartments</h1>
-            <p className="text-[#091638] text-[1.2rem] w-[38rem] sans">Fulfill your career dreams, enjoy all the achievements of the city center and luxury housing to the fullest.</p>
+        <div className="lg:h-[57rem] px-4 lg:px-0 bg-[#F3F3FA] pt-[7.5rem]">
+            <div className='lg:pl-[10%]'>
+            <h1 className="text-[#091638] merrin text-2xl lg:text-[3.2rem] font-semibold">Top Apartments</h1>
+            <p className="text-[#091638] mt-8 lg:text-[1.2rem] lg:w-[38rem] sans">Fulfill your career dreams, enjoy all the achievements of the city center and luxury housing to the fullest.</p>
 
-            <div className="flex">
+            <div className="flex mt-5 lg:mt-4">
                 <div className="divider w-[70vw]"></div>
                 <button className="btn btn-outline border-[#1C3988] ml-4 text-lg border-2">Show All Apartment</button>
             </div>
             </div>
 
-            <div className='mt-20 pl-[10%]'>
+            <div className='mt-20 lg:pl-[10%]'>
 
                 <Swiper
                     slidesPerView={4}
