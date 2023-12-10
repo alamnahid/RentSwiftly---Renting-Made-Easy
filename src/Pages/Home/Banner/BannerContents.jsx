@@ -6,7 +6,7 @@ const BannerContents = () => {
         <div className="px-4 lg:px-0">
             <h1 className="text-[#091638] text-2xl lg:text-[4rem] font-semibold lg:w-[35rem] lg:leading-[5rem] merrin">Modern living for everyone</h1>
 
-            <p className="text-[#091638] sans lg:w-[37rem] lg:text-[1.32rem]">We provide a complete service for the sale, purchase or rental of real estate. We have been operating in Madrid and Barcelona more than 15 years.</p>
+            <p className="text-[#091638] mt-2 sans lg:w-[39rem] lg:text-[1.32rem]">We provide a complete service for the sale, purchase or rental of real estate. We have been operating in Madrid and Barcelona more than 15 years.</p>
 
             <div className="lg:w-[33rem] h-[6.5rem] rounded-xl bg-[#F3F3FA] mt-6 flex justify-center items-center">
 
