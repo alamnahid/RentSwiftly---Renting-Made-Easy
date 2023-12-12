@@ -24,7 +24,7 @@ const Footer = () => {
                     <p className="text-[#141B2D] mt-3 ">Get the latest news and interesting offers and real estate</p>
 
                     <div>
-                        <input className="bg-[#FFFFFF] w-[13rem] md:w-[16.5rem] h-12  pl-4 rounded-lg" placeholder="Your email address" type="email" name="email" />
+                        <input className="bg-[#FFFFFF] outline-none w-[13rem] md:w-[16.5rem] h-12  pl-4 rounded-lg" placeholder="Your email address" type="email" name="email" />
                         <button className="btn ml-6 rounded-lg btn-outline border-2 border-[#1C3988] text-[#1C3988] font-bold mt-4">Subscribe</button>
                     </div>
                 </div>
