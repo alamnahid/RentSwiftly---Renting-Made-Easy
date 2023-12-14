@@ -6,13 +6,13 @@ import ReviewCard from './ReviewCard';
 
 const Reviews = () => {
     return (
-        <div className="my-20 mx-[10%]">
+        <div className="my-20 ml-[10%]">
             <h1 className="text-[#091638] text-[3.2425rem] font-semibold merrin">References</h1>
             <p className="text-[#091638] text-[1.2rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus rutrum donec ultricies cras id ac.</p>
 
 
             <div>
-                <div className='mt-20 lg:pl-[10%]'>
+                <div className='mt-4'>
 
                     <Swiper
                         slidesPerView={4}
@@ -28,30 +28,28 @@ const Reviews = () => {
                                 slidesPerView: 1, // 1 slide per view on small screens (mobile devices)
                             },
                             768: {
-                                slidesPerView: 1.5, // 2 slides per view on tablets
+                                slidesPerView: 1, // 2 slides per view on tablets
                             },
                             1024: {
-                                slidesPerView: 4.5, // 4 slides per view on desktop devices
+                                slidesPerView: 2.5, // 4 slides per view on desktop devices
                             },
                         }}
 
                     >
                         <SwiperSlide className='pb-12'>
-                            <h1>nahid</h1>
-                            <ReviewCard/>
-                            {/* <TopApartmentSwipperCard /> */}
+                            <ReviewCard />
                         </SwiperSlide>
                         <SwiperSlide className='pb-12'>
-                            {/* <TopApartmentSwipperCard /> */}
+                            <ReviewCard />
                         </SwiperSlide>
                         <SwiperSlide className='pb-12'>
-                            {/* <TopApartmentSwipperCard /> */}
+                            <ReviewCard />
                         </SwiperSlide>
                         <SwiperSlide className='pb-12'>
-                            {/* <TopApartmentSwipperCard /> */}
+                            <ReviewCard />
                         </SwiperSlide>
                         <SwiperSlide className='pb-12'>
-                            {/* <TopApartmentSwipperCard /> */}
+                            <ReviewCard />
                         </SwiperSlide>
 
                     </Swiper>
