@@ -3,89 +3,78 @@ import logininimage from "../../../assets/images/signupgif.gif"
 import google from "../../../assets/icons/google.svg"
 import { useForm } from "react-hook-form"
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import { useMutation } from "@tanstack/react-query";
+import { useEffect } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
 
     const { createUser, updateUserProfile, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate()
     const location = useLocation()
-
     const from = location.state?.form?.pathname || "/";
-
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+  
     const {
-        register,
-        handleSubmit,
-        reset,
-        formState: { errors },
+      register,
+      handleSubmit,
+      reset,
+      formState: { errors },
     } = useForm();
-
+    const { mutate } = useMutation({
+      mutationKey: ['food'],
+      mutationFn: (addingData) => {
+        return axios.post('http://localhost:5000/users', addingData, { withCredentials: true, })
+      },
+      onSuccess: () => {
+        
+      }
+  
+    })
+  
     const onSubmit = async (data) => {
-        console.log(data)
-        // const imageFile = { image: data.image[0] }
-        // const res = await axiosPublic.post(image_hosting_api, imageFile, {
-        //     headers: {
-        //         'content-Type': 'multipart/form-data'
-        //     }
-        // })
-        // if (res.data.success) {
-
-        //     console.log(res.data.display_url)
-        // }
-        createUser(data.email, data.password)
-            .then(result => {
-                console.log(result.user)
-
-                updateUserProfile(data.name)
-                    .then((() => {
-                        const userInfo = {
-                            name: data.name,
-                            email: data.email
-                        }
-                        axiosPublic.post('/users', userInfo)
-                            .then(res => {
-                                console.log('fgfgfgfg')
-                                if (res.data.insertedId) {
-                                    reset();
-                                    Swal.fire({
-                                        position: "top-end",
-                                        icon: "success",
-                                        title: "Signed up Successfully",
-                                        showConfirmButton: false,
-                                        timer: 1500
-                                    });
-                                    navigate(from, { replace: true })
-                                }
-                            })
-                    }))
-            })
+      console.log(data)
+     
+  
+      createUser(data.email, data.password)
+        .then(result => {
+          console.log(result.user)
+          toast.success('User Created successfully');
+          updateUserProfile(data.name)
+            .then((() => {
+              mutate({
+                name: data.name,
+                email: data.email,
+              })
+              navigate(from, { replace: true })
+              reset()
+            }))
+        })
+        .catch(error => {
+          toast.error(error.message)
+  
+        })
     }
-
+  
     const handleGoogleSignIn = () => {
-        googleSignIn()
-            .then(result => {
-                console.log(result.user)
-                const userInfo = {
-                    email: result.user?.email,
-                    name: result.user?.displayName
-
-                }
-                axiosPublic.post('/users', userInfo)
-                    .then(res => {
-                        console.log(res)
-                        Swal.fire({
-                            position: "top-end",
-                            icon: "success",
-                            title: "Signed up Successfully",
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        navigate(from, { replace: true })
-                    })
-            })
+      googleSignIn()
+        .then(result => {
+          toast.success('User Created successfully');
+          mutate({
+            email: result.user?.email,
+            name: result.user?.displayName,
+            photo: result.user?.photoURL,
+          })
+          navigate(from, { replace: true })
+        })
+        .catch(error => {
+          toast.error(error.message)
+        })
     }
-
 
 
     return (
