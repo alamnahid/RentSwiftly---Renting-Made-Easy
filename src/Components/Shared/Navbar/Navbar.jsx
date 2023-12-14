@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo/logo.svg"
 import { useState } from "react";
 
@@ -35,8 +35,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className="btn btn-outline border-[#1C3988] lg:w-[6rem] text-lg border-2">Signin</button>
-                    <button className="btn border-none bg-[#1C3988] lg:w-[6rem] text-lg text-white ml-4 btn-neutral">Register</button>
+                    <Link to="/login"><button className="btn btn-outline border-[#1C3988] lg:w-[6rem] text-lg border-2">Signin</button></Link>
+                    <Link to="/signup"><button className="btn border-none bg-[#1C3988] lg:w-[6rem] text-lg text-white ml-4 btn-neutral">Register</button></Link>
                 </div>
             </div>
 
