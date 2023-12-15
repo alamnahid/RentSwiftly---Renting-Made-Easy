@@ -1,5 +1,6 @@
 import AboutUs from "./AboutUs/AboutUs";
 import Banner from "./Banner/Banner";
+import GoogleMapForService from "./GoogleMap/GoogleMapForService";
 import OurTeam from "./OurTeam/OurTeam";
 import Reviews from "./Reviews/Reviews";
 import TopApartments from "./TopApartments/TopApartments";
@@ -12,6 +13,7 @@ const Home = () => {
             <TopApartments/>
             <AboutUs/>
             <OurTeam/>
+            <GoogleMapForService/>
             <Reviews/>
             
         </div>
