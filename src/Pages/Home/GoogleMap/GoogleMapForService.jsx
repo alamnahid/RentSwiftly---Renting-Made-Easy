@@ -9,7 +9,7 @@ const GoogleMapForService = () => {
             <p className="text-[#091638] mt-8 lg:text-[1.2rem] sans">Explore our expansive service area on the interactive map below, designed to seamlessly guide you through the locations we proudly serve. From city centers to suburban retreats, our commitment to providing exceptional service extends far and wide.</p>
         </div>
 
-            <div className="overflow-hidden hover:shadow-lg hover:shadow-[#1C3988] max-w-full w-full md:min-w-[50vw] h-[600px]">
+            <div className="overflow-hidden hover:shadow-lg hover:shadow-[#1C3988] max-w-full w-full md:min-w-[50vw] h-[500px]">
 
                 <div id="gmap-canvas" className="h-full w-full max-w-full">
 
