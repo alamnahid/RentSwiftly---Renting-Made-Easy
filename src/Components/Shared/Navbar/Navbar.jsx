@@ -39,7 +39,9 @@ const Navbar = () => {
                     <ul className=" menu-horizontal px-1">
                         <li><NavLink className={({ isActive }) => isActive ? 'btn btn-neutral text-base border-none bg-[#1C3988] text-white' : 'text-lg font-medium btn bg-white border-none shadow-none'} to='/'>Home</NavLink></li>
 
-                        <li><NavLink className={({ isActive }) => isActive ? 'text-base border-none bg-[#1C3988] text-white' : 'text-lg font-medium btn bg-white border-none shadow-none'} to='/about'>About Us</NavLink></li>
+                        <li><NavLink className={({ isActive }) => isActive ? 'btn btn-neutral text-base border-none bg-[#1C3988] text-white' : 'text-lg font-medium btn bg-white border-none shadow-none'} to='/allhouse'>Available Houses</NavLink></li>
+
+                        <li><NavLink className={({ isActive }) => isActive ? 'btn btn-neutral text-base border-none bg-[#1C3988] text-white' : 'text-lg font-medium btn bg-white border-none shadow-none'} to='/addhouse'>Add House</NavLink></li>
 
                     </ul>
                 </div>

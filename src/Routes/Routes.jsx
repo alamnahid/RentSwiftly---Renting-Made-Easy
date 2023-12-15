@@ -3,6 +3,8 @@ import Root from "../Root/Root";
 import Home from "../Pages/Home/Home";
 import SignUp from "../Pages/Registration/SignUp/SignUp";
 import Login from "../Pages/Registration/LogIn/Login";
+import AvailableHouse from "../Pages/AvailableHouse/AvailableHouse";
+import AddNewHouse from "../Pages/AddHouse/AddNewHouse";
 
 const router = createBrowserRouter([
     {
@@ -12,6 +14,14 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home/>
+            },
+            {
+                path: '/allhouse',
+                element: <AvailableHouse/>
+            },
+            {
+                path: '/addhouse',
+                element: <AddNewHouse/>
             },
             
         ]
