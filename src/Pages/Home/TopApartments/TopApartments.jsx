@@ -3,6 +3,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import TopApartmentSwipperCard from './TopApartmentSwipperCard';
+import { Link } from 'react-router-dom';
 
 
 
@@ -15,7 +16,7 @@ const TopApartments = () => {
 
             <div className="flex mt-5 lg:mt-4">
                 <div className="divider w-[70vw]"></div>
-                <button className="btn btn-outline border-[#1C3988] ml-4 text-lg border-2">Show All Apartment</button>
+                <Link to='/allhouse'><button className="btn btn-outline border-[#1C3988] ml-4 text-lg border-2">Show All Apartment</button></Link>
             </div>
             </div>
 

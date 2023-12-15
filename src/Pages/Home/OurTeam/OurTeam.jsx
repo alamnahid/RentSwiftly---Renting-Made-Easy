@@ -1,5 +1,10 @@
 import OurTeamCard from "./OurTeamCard";
 import Marquee from "react-fast-marquee";
+import team1 from "../../../assets/images/Md. Nahid Alam.jpg"
+import team2 from "../../../assets/images/team2.webp"
+import team3 from "../../../assets/images/team3.jpg"
+import team4 from "../../../assets/images/team4.png"
+import team5 from "../../../assets/images/team5.avif"
 
 const OurTeam = () => {
     return (
@@ -12,11 +17,11 @@ const OurTeam = () => {
 
             <div className=" xl:mx-[10%] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-items-center items-center gap-8">
             <Marquee className="col-span-3">
-                <OurTeamCard />
-                <OurTeamCard />
-                <OurTeamCard />
-                <OurTeamCard />
-                <OurTeamCard />
+                <OurTeamCard name={'Nahid Alam'} designation={'Founder & CEO'} image={team1} />
+                <OurTeamCard name={'Alex Johnson'} designation={'Chief Operations Officer'} image={team2} />
+                <OurTeamCard name={'Sophia Chen'} designation={'Lead Developer'} image={team3} />
+                <OurTeamCard name={'Marcus Rodriguez'} designation={'Creative Director'} image={team4} />
+                <OurTeamCard name={'Aisha Patel'} designation={'Customer Experience Manager'} image={team5} />
             </Marquee>
 
 
