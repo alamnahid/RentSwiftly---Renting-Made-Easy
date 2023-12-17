@@ -61,6 +61,7 @@ const AddNewHouse = () => {
                 ownername: data.ownername,
                 contactnumber: data.number,
                 owneremail: user.email,
+                ownerimage: user.photoURL,
                 housename: data.housename,
                 location: data.location,
                 roomsno: data.roomsno,
