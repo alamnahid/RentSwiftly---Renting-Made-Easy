@@ -82,7 +82,7 @@ const AvailableHouse = () => {
                 <form onSubmit={handleSearch}>
                     <div className="">
                         <div className="md:w-[33rem] mx-auto mt-8 h-[3.5rem] relative flex justify-center items-center">
-                            <input type="text" name="search" placeholder="Search Here" className="md:w-[19rem] border-none outline-none h-[3.5rem] text-lg pl-4 bg-white shadow-sm rounded-sm" />
+                            <input type="text" name="search" placeholder="Enter your location" className="md:w-[19rem] border-none outline-none h-[3.5rem] text-lg pl-4 bg-white shadow-sm rounded-sm" />
 
                             <button type="submit" className="btn border-none bg-[#1C3988] lg:w-[9.4rem] h-[3.5rem] text-base text-white ml-2 btn-neutral"><img src={searchicon} alt="" /> Search</button>
                         </div>
@@ -92,7 +92,7 @@ const AvailableHouse = () => {
             </div>
 
 
-            <div className="mx-[10%] mt-20 grid grid-cols-3 justify-items-center items-center gap-8">
+            <div className="mx-[10%] mt-20 grid grid-cols-1 lg:grid-cols-3 justify-items-center items-center gap-8">
                 {
                     house?.map(home=><AvailableHouseCard key={home?._id} home={home} />)
                 }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import image from "../../assets/images/cardimage.png"
 
 const AvailableHouseCard = ({home}) => {
@@ -19,7 +20,7 @@ const AvailableHouseCard = ({home}) => {
                         <p className="text-[#1C3988] text-lg sans font-semibold pl-5">${home?.price}</p>
                         <p className=" text-[#141B2D] sans pl-5">{home?.location}</p>
                     </div>
-                    <button className="btn btn-outline border-[#1C3988] text-lg border-2">See Details</button>
+                    <Link to={`/allhouse/${home?._id}`}><button className="btn btn-outline border-[#1C3988] text-lg border-2">See Details</button></Link>
                 </div>
 
             </div>

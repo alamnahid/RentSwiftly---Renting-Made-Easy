@@ -22,7 +22,6 @@ const AddNewHouse = () => {
     const {
         register,
         handleSubmit,
-        reset,
         formState: { errors },
     } = useForm();
 

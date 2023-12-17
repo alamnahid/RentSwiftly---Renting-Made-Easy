@@ -5,6 +5,7 @@ import SignUp from "../Pages/Registration/SignUp/SignUp";
 import Login from "../Pages/Registration/LogIn/Login";
 import AvailableHouse from "../Pages/AvailableHouse/AvailableHouse";
 import AddNewHouse from "../Pages/AddHouse/AddNewHouse";
+import AvailableHouseDetails from "../Pages/AvailableHouse/AvailableHouseDetails/AvailableHouseDetails";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
             {
                 path: '/allhouse',
                 element: <AvailableHouse/>
+            },
+            {
+                path: '/allhouse/:id',
+                element: <AvailableHouseDetails/>
             },
             {
                 path: '/addhouse',
