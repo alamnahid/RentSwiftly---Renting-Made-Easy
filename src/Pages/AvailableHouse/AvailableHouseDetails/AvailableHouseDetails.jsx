@@ -20,11 +20,11 @@ const AvailableHouseDetails = () => {
     console.log(data)
 
     return (
-        <div className="mx-[10%] mt-20 mb-20">
-            <h1 className="text-[#141B2D] text-[3.2rem] font-semibold merrin">{data?.housename}</h1>
+        <div className="mx-[2%] lg:mx-[10%] mt-8 md:mt-20 mb-20">
+            <h1 className="text-[#141B2D] text-2xl lg:text-[3.2rem] font-semibold merrin">{data?.housename}</h1>
 
 
-            <div className="flex justify-between gap-8">
+            <div className="flex justify-between gap-8 flex-col lg:flex-row">
                 <AvailableHouseDetailsCard data={data} />
 
                 <div className="mt-[2.5rem]">
