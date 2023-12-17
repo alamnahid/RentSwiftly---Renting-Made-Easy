@@ -60,12 +60,14 @@ const AddNewHouse = () => {
             mutate({
                 ownername: data.ownername,
                 contactnumber: data.number,
+                owneremail: user.email,
                 housename: data.housename,
                 location: data.location,
                 roomsno: data.roomsno,
                 price: data.price,
                 image: res.data.data.display_url,
                 status: 'available',
+                description: data.description,
                 bookingcount: 0
             })
         }
