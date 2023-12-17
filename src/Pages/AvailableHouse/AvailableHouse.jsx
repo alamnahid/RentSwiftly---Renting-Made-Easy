@@ -73,7 +73,7 @@ const AvailableHouse = () => {
         <div className=" mt-8">
 
             <div className="bg-[#F3F3FA] py-8  rounded-md">
-                <p>{house.length}</p>
+                {/* <p>{house.length}</p> */}
 
                 <h1 className="merrin text-center text-[3rem] font-semibold text-[#141B2D]">Discover Your Dream Home</h1>
                 <p className="text-center text-[#141B2D] text-[1.2rem] sans mt-3 w-[50vw] mx-auto">Explore our curated selection of available homes for rent and effortlessly find your perfect match by searching with ease based on your preferred location.</p>
@@ -92,9 +92,11 @@ const AvailableHouse = () => {
             </div>
 
 
-            <div className="mx-[10%] mt-20">
-
-                <AvailableHouseCard />
+            <div className="mx-[10%] mt-20 grid grid-cols-3 justify-items-center items-center gap-8">
+                {
+                    house?.map(home=><AvailableHouseCard key={home?._id} home={home} />)
+                }
+                
             </div>
 
             <div className='text-center mb-10 space-x-4 md:space-x-6 mt-20'>
