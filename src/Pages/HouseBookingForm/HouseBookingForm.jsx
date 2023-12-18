@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
@@ -11,6 +11,7 @@ import Swal from "sweetalert2";
 const HouseBookingForm = () => {
     const { id } = useParams()
     const { user } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const axiosPublic = useAxiosPublic()
     const { data, refetch, isLoading } = useQuery({
@@ -35,15 +36,15 @@ const HouseBookingForm = () => {
         },
         onSuccess: () => {
             Swal.fire({
-                title: "Successfully Added House",
-                text: "User Can see your house in the Available House Page",
+                title: "Booking Request Sent Successfully",
+                text: "Owner Can contact with you soon",
                 icon: "success",
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
                 confirmButtonText: "OK"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // navigate('/allhouse')
+                    navigate('/')
                 }
             });
         }
@@ -53,17 +54,16 @@ const HouseBookingForm = () => {
     const onSubmit = async (data) => {
         console.log(data)
         mutate({
-            ownername: data.ownername,
+            houseId: id,
+            bookingusername: data.name,
             contactnumber: data.number,
-            owneremail: user.email,
-            ownerimage: user.photoURL,
-            housename: data.housename,
-            location: data.location,
-            roomsno: data.roomsno,
-            price: data.price,
-            status: 'available',
-            description: data.description,
-            bookingcount: 0
+            occupation: data.occupation,
+            maritalstatus: data.maritalstatus,
+            familymembers: data.familymembers,
+            pets: data.pets,
+            vehicle: data.vehicle,
+            address: data.address,
+            bookingemail: user.email
         })
 
 
@@ -84,7 +84,7 @@ const HouseBookingForm = () => {
                 {/* owner input  */}
                 <p className="text-[#444] mt-5 text-xl font-semibold">Your name</p>
 
-                <input className="w-full mt-2 h-[3.5rem] text-gray-700 placeholder:text-[#A1A1A1] text-lg outline-none pl-[1.81rem] rounded-lg border-2 border-[#D0D0D0] bg-white" type="text" name="ownername" id="" placeholder="Enter Owner name" {...register("ownername", { required: true })} defaultValue={user?.displayName} />
+                <input className="w-full mt-2 h-[3.5rem] text-gray-700 placeholder:text-[#A1A1A1] text-lg outline-none pl-[1.81rem] rounded-lg border-2 border-[#D0D0D0] bg-white" type="text" name="name" id="" placeholder="Enter Your name" {...register("ownername", { required: true })} defaultValue={user?.displayName} />
                 {errors.ownername && <span>This field is required</span>}
 
                 {/* Contact number input  */}
@@ -94,7 +94,7 @@ const HouseBookingForm = () => {
 
                 <p className="text-[#444] mt-5 text-xl font-semibold">Occupation</p>
 
-                <input className="w-full mt-2 h-[3.5rem] text-gray-700 placeholder:text-[#A1A1A1] text-lg outline-none pl-[1.81rem] rounded-lg border-2 border-[#D0D0D0] bg-white" type="text" name="number" id="" placeholder="Your occupation" {...register("occupation", { required: true })} />
+                <input className="w-full mt-2 h-[3.5rem] text-gray-700 placeholder:text-[#A1A1A1] text-lg outline-none pl-[1.81rem] rounded-lg border-2 border-[#D0D0D0] bg-white" type="text" name="occupation" id="" placeholder="Your occupation" {...register("occupation", { required: true })} />
 
                 <p className="text-[#444] mt-5 text-xl font-semibold">Marrital Status</p>
 
