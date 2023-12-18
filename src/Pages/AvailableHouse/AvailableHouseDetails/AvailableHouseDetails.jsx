@@ -1,10 +1,11 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 
 import person from "../../../assets/images/team2.webp"
 import AvailableHouseDetailsCard from "./AvailableHouseDetailsCard";
 import { IoChatbubblesOutline } from "react-icons/io5";
+import ChatModal from "../../../Components/Shared/ChatModal/ChatModal";
 
 
 const AvailableHouseDetails = () => {
@@ -41,15 +42,16 @@ const AvailableHouseDetails = () => {
                         <p className="sans text-[#141B2D] text-center">{data?.owneremail}</p>
                         <p className="sans text-[#141B2D] text-center">{data?.contactnumber}</p>
                     </div>
-                    <button className="btn btn-neutral bg-[#1C3988] w-[22rem]">Book This House</button>
+                    <Link to={`/housebooking/${id}`}><button className="btn btn-neutral bg-[#1C3988] w-[22rem]">Book This House</button></Link>
                 </div>
             </div>
 
             <div className="w-[10rem] h-[10rem] shadow-2xl shadow-[#1C3988] rounded-[50%] bg-[#1C3988] flex justify-center items-center flex-col absolute top-[70vh] right-0 hover:bg-black cursor-pointer">
-                <IoChatbubblesOutline className="text-[3rem] text-white"/>
-                <p className="text-white text-lg font-medium">Chat With Owner</p>
+               
 
+            <ChatModal/>
             </div>
+
         </div>
     );
 };
