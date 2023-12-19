@@ -32,7 +32,7 @@ const HouseBookingForm = () => {
     const { mutate } = useMutation({
         mutationKey: ['houses'],
         mutationFn: (addingData) => {
-            return axios.post('http://localhost:5000/addhouse', addingData, { withCredentials: true, })
+            return axios.post('http://localhost:5000/housebookingrequest', addingData, { withCredentials: true, })
         },
         onSuccess: () => {
             Swal.fire({
