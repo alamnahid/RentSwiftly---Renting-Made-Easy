@@ -143,9 +143,6 @@ const HouseBookingForm = () => {
                 <p className="text-[#444] mt-5 text-xl font-semibold">Permanent Address</p>
 
                 <input className="w-full mt-2 h-[3.5rem] text-gray-700 placeholder:text-[#A1A1A1] text-lg outline-none pl-[1.81rem] rounded-lg border-2 border-[#D0D0D0] bg-white" type="text" name="address" id="" placeholder="Your Permanent Address" {...register("address", { required: true })} />
-                <input className="w-full mt-2 h-[3.5rem] text-gray-700 placeholder:text-[#A1A1A1] text-lg outline-none pl-[1.81rem] rounded-lg border-2 border-[#D0D0D0] bg-white" type="text" name="address" id="" placeholder="Your Permanent Address" {...register("address", { required: true })} />
-                <input className="w-full mt-2 h-[3.5rem] text-gray-700 placeholder:text-[#A1A1A1] text-lg outline-none pl-[1.81rem] rounded-lg border-2 border-[#D0D0D0] bg-white" type="text" name="address" id="" placeholder="Your Permanent Address" {...register("address", { required: true })} />
-                <input className="w-full mt-2 h-[3.5rem] text-gray-700 placeholder:text-[#A1A1A1] text-lg outline-none pl-[1.81rem] rounded-lg border-2 border-[#D0D0D0] bg-white" type="text" name="address" id="" placeholder="Your Permanent Address" {...register("address", { required: true })} />
 
 
 
